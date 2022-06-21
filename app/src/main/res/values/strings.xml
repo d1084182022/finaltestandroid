@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">finaltestandroid</string>
+    <string name="input_go_to_where">輸入去過的地方：</string>
+    <string name="OK">輸入完成</string>
+    <string name="chack">查看去過的地方</string>
+    <string name="noNULL">輸入不能為空</string>
+    <string name="gotowhere">去過得地方：</string>
+    <string name="back">返回</string>
+    <string name="value"> </string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

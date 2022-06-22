@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">finaltestandroid</string>
+    <string name="title">防疫足跡APP</string>
     <string name="input_go_to_where">輸入去過的地方：</string>
     <string name="OK">輸入完成</string>
     <string name="chack">查看去過的地方</string>

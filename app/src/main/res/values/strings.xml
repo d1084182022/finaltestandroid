@@ -6,6 +6,11 @@
     <string name="noNULL">輸入不能為空</string>
     <string name="gotowhere">去過得地方：</string>
     <string name="back">返回</string>
+    <string name="delete">清除</string>
+    <string name="save">輸入完成</string>
+    <string name="read">讀取去過的地方</string>
+    <string name="delsuccess">刪除成功</string>
+    <string name="delfall">刪除失敗</string>
     <string name="value"> </string>
     <string name="title_activity_main2">MainActivity2</string>
     <!-- Strings used for fragments for navigation -->

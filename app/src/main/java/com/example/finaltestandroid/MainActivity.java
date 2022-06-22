@@ -18,6 +18,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,7 +26,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     private TextView mtxt;
     private EditText mETxt;
-    private Button mBtnDo,mbtngotochack,btnsava,btnread;
+    private Button mbtngotochack,btnsava;
 
 
     @Override
@@ -35,12 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         mtxt=findViewById(R.id.textView3);
         mETxt=findViewById(R.id.editText);
-        mBtnDo=findViewById(R.id.btndo);
-        mBtnDo.setOnClickListener(btndoOnClick);
+
         btnsava = (Button) findViewById(R.id.btnsave);
-        btnread = (Button) findViewById(R.id.btnread);
         btnsava.setOnClickListener(saveClickListener);
-        btnread.setOnClickListener(readClickListener);
+
         mtxt.setMovementMethod(ScrollingMovementMethod.getInstance());
         mbtngotochack=(Button) findViewById(R.id.btnchack);
         mbtngotochack.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
 
         public void onClick(View arg0) {
 
+            String strwhere = mETxt.getText().toString().trim();
+
+            if (mETxt.getText().toString().matches("")){
+                mtxt.setText(R.string.noNULL);
+                return;
+            }
+            else{
+                mtxt.setText(strwhere);
+            }
             String filename = "CheckFlie.txt";
             // 存放檔案位置在 內部空間/Download/
             File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
@@ -83,44 +91,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-    //按下Read按鈕
-    private Button.OnClickListener readClickListener = new Button.OnClickListener() {
 
-        public void onClick(View arg0) {
-            String filename = "CheckFlie.txt";
-            File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-            File file = new File(path, filename);
 
-            try{
-                //建立FileReader物件，並設定讀取的檔案為CheckFlie.txt
-                FileReader fr = new FileReader(file);
-                //將BufferedReader與FileReader做連結
-                BufferedReader bufFile = new BufferedReader(fr);
-                String readData = "";
-                String temp = bufFile.readLine(); //readLine()讀取一整行
-                while (temp!=null){
-                    readData+=temp +  "\n";
-                    temp=bufFile.readLine();
-                }
-                mtxt.setText(readData);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-    };
-    private View.OnClickListener btndoOnClick = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-        String strwhere = mETxt.getText().toString().trim();
-
-        if (mETxt.getText().toString().matches("")){
-            mtxt.setText(R.string.noNULL);
-        }
-        else{
-            mtxt.setText(strwhere);
-        }
-}};
 
 
 }
